@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import Body from './components/Body'
 
 import { useState,ReactNode } from 'react';
+import Footer from './components/Footer';
 //A
 const HeroHead:Record<string, ReactNode> = {
   default:<h1 className='w-fit font-clash font-semibold text-[40px] lg:text-[88px] lg:leading-[104px] md:text-[72px] md:leading-[80px] leading-[48px] text-center'>Your <span className='text-[#FF42F7] underline'>Ultimate</span> Video Toolkit</h1> ,
@@ -21,8 +22,8 @@ const HeroText = {
 };
 
 function App() {
-  const [herotext, setHeroText] = useState<"default" |"compress" | "edit" | "download">("default")
-  const handleTextChange = (key: "default" | "compress" | "edit" | "download") => {
+  const [herotext, setHeroText] = useState<"default" |"compress" | "toAudio" | "trim" | "gif">("default")
+  const handleTextChange = (key: "default" | "compress" | "toAudio" | "trim"| "gif") => {
     setHeroText(key);
   };
   return (
@@ -31,6 +32,7 @@ function App() {
     <Hero Head={HeroHead[herotext]}
     Text={HeroText[herotext]}/>
     <Body handleTextChange={handleTextChange}/>
+    <Footer />
     </>
   )
 }
