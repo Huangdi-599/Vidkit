@@ -50,7 +50,7 @@ function App() {
   return (
     <>
       <Nav handleTextChange={handleTextChange}/>
-      <Hero Head={heroHeadContent[heroText]} Text={heroTextContent[heroText]} />
+      <Hero HeadText={heroHeadContent[heroText]} Text={heroTextContent[heroText]} />
       <Body handleTextChange={handleTextChange} />
       <Footer handleTextChange={handleTextChange} />
     </>

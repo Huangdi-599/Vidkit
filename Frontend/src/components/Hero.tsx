@@ -3,8 +3,11 @@ import mdhero from '../assets/mdhero.svg'
 import xlhero from '../assets/xlhero.svg'
 import { FC } from 'react';
 import VideoProcessor from './VideoProcessor';
-
-const Hero: FC =({Head, Text}) => {
+interface HeroProps {
+  HeadText: ReactNode;
+  Text: string;
+}
+const Hero:FC<HeroProps> =({HeadText, Text}) => {
   const bgImage = window.innerWidth >= 1024 ? xlhero : window.innerWidth >= 768 ? mdhero : smhero;
   return (
     <div
