@@ -1,7 +1,7 @@
 import  logo from '../assets/VIDKIT.svg'
 import Menu from '../assets/menu.png'
 import Close from '../assets/close.svg'
-import { useState } from 'react'
+import { useState, FC } from 'react'
 interface NavItem {
   name: string;
   nav: string;
@@ -35,7 +35,10 @@ const nav:NavItem[] = [
   },
 
 ]
-const Nav = ({handleTextChange}) => {
+interface TextProps {
+  handleTextChange: (key: "default" | "compress" | "toAudio" | "trim" | "gif") => void;
+}
+const Nav:FC<TextProps> = ({handleTextChange}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {

@@ -2,6 +2,7 @@ import smfooter from '../assets/smfooter.svg'
 import mdfooter from '../assets/mdfooter.svg'
 import xlfooter from '../assets/xlfooter.svg'
 import  logo from '../assets/VIDKIT.svg'
+import { FC } from 'react'
 interface NavItem {
     name: string;
     nav: string;
@@ -35,7 +36,10 @@ const nav:NavItem[] = [
     },
 
 ]
-function Footer({handleTextChange}) {
+interface TextProps {
+    handleTextChange: (key: "default" | "compress" | "toAudio" | "trim" | "gif") => void;
+}
+const Footer:FC<TextProps> = ({handleTextChange})=> {
     const bgImage = window.innerWidth >= 1024 ? xlfooter : window.innerWidth >= 768 ? mdfooter : smfooter;
   return (
     <>

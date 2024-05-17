@@ -27,7 +27,7 @@ const Hero:FC<HeroProps> =({HeadText, Text}) => {
             </svg>
           </div>
           <div className='md:w-[500px] flex flex-col justify-center items-center'>
-            {Head}
+            {HeadText}
             <p className='w-fit mt-[12px] text-center font-aeonik font-normal text-[20px] leading-[28px]'>{Text}</p>
           </div>
         </div>
@@ -47,7 +47,7 @@ const Hero:FC<HeroProps> =({HeadText, Text}) => {
             </svg>
           </div>
           <div className='flex flex-col justify-center items-center'>
-            {Head}
+            {HeadText}
             <p className='w-fit mt-[12px] text-center font-aeonik font-normal text-[20px] leading-[28px]'>{Text}</p>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import image from '../assets/pngwing.svg'
 import Review from './Review'
+import { FC } from 'react'
 const instructions = [
   {
     id :1,
@@ -53,7 +54,10 @@ const Features = [
     isAav:false
   },
 ]
-function Body({handleTextChange}) {
+interface TextProps {
+  handleTextChange: (key: "default" | "compress" | "toAudio" | "trim" | "gif") => void;
+}
+const Body:FC<TextProps> = ({handleTextChange}) => {
   return (
     <div  id='how' >
       <body className='px-[16px] md:px-[48px] flex flex-col lg:hidden mt-[150px]'>
