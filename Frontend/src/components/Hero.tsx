@@ -10,6 +10,7 @@ const Hero: FC =({Head, Text}) => {
     <div
     className="bg-cover bg-center !h-[766px] md:!h-[1002px]"
     style={{ backgroundImage: `url(${bgImage})` }}
+    id='hero'
     >
       <div className='text-white flex lg:hidden flex-col md:px-[48px] pt-[64px] px-[16px]'>
         <div className='mb-[64px] flex flex-col items-center justify-center'>

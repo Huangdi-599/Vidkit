@@ -1,4 +1,5 @@
 import image from '../assets/pngwing.svg'
+import Review from './Review'
 const instructions = [
   {
     id :1,
@@ -54,7 +55,7 @@ const Features = [
 ]
 function Body({handleTextChange}) {
   return (
-    <>
+    <div  id='how' >
       <body className='px-[16px] md:px-[48px] flex flex-col lg:hidden mt-[150px]'>
         <h1 className="mb-[8px] text-textHead font-clash font-semibold md:text-[64px] md:leading-[72px] text-[36px] leading-[44px]">How to use</h1>
         <p className="mb-[40px] text-textBody font-aeonik font-normal md:text-[24px] md:leading-[32px] text-[20px] leading-[28px]">4 quick and easy steps to use Vidkit video tools</p>
@@ -94,11 +95,12 @@ function Body({handleTextChange}) {
             }
           </div>
         </div>
+        <Review />
       </body>
       <body className='hidden px-[128px] lg:flex flex-col mt-[200px] '>
         <h1 className='mb-[8px] text-textHead font-clash font-semibold text-[64px] leading-[72px]'>How to use</h1>
         <p className='mb-[64px] text-textBody font-normal text-[34px] leading-[32px]'>4 quick and easy steps to use Vidkit video tools</p>
-        <div className='flex flex-wrap flex-row gap-[24px] w-full'>
+        <div  className='flex flex-wrap flex-row gap-[24px] w-full'>
           {instructions.map((item, index)=>(
             <div key={index} className={`${(item.id === 2 || item.id === 3) ? 'w-[43%] bg-[#fceefc] ' : 'w-[57%] flex-1 bg-BgColor'} flex flex-col  p-[48px] rounded-[16px]`}>
               <div className={`${(item.id === 2 || item.id === 3) ? 'bg-secondary' : 'bg-primary'} mb-[24px] font-clash text-white text-[64px] leading-[70px] py-[8px] px-[32px] rounded-[8px] w-fit`}>{item.id}</div>
@@ -118,7 +120,7 @@ function Body({handleTextChange}) {
                   <h1 className="mb-[8px] text-textHead font-clash font-semibold text-[40px] leading-[48px]">{item.title}</h1>
                   <p className="mb-[292px] text-textBody font-aeonik font-normal text-[20px] leading-[28px]">{item.descr}</p>
                   <div className='flex flex-row-reverse items-end justify-between'>
-                    <div className='h-[100px] w-[139.6px]'>
+                    <div className='h-[100px] w-[139.6px] hover:scale-125 transition-transform'>
                       <img className='h-full w-full' src={image} alt="viskit"  />
                     </div>
                     { item.isAav ?(
@@ -137,8 +139,9 @@ function Body({handleTextChange}) {
               }
           </div>
         </div>
+        <Review />
       </body>
-    </>
+    </div>
   )
 }
 
