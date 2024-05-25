@@ -75,27 +75,30 @@ function VideoProcessor() {
                     }
                     {
                       stage === 'uploaded' && videoFile &&
-                      <div className='flex flex-col text-[#1d1d1d] bg-white pt-[40px] px-[40px] w-full rounded-b-[8px] border-2 border-red-500 pb-[170px] md:pb-[200px] lg:pb-[320px]'>
-                        <p className='mb-[16px] font-aeonik font-bold lg:text-[16px] lg:leading-[20px]'><p></p>Uploaded files<span className='h-[16px] w-[16px] bg-primary rounded-full'></span></p>
+                      <div className='flex flex-col text-[#1d1d1d] bg-white md:pt-[40px] pt-[16px] px-[16px] md:px-[40px] w-full rounded-b-[8px]  pb-[170px] md:pb-[200px] lg:pb-[320px]'>
+                        <div className='flex items-center gap-[10px] mb-[16px] font-aeonik font-normal lg:font-bold text-[16px] leading-[20px]'>
+                          <p>Uploaded files</p>
+                          <div className='h-[16px] w-[16px] bg-primary rounded-full'></div>
+                        </div>
                         <div className='mb-[45px]'>
-                          <div className=' flex items-center justify-between rounded-[8px] py-[16px] px-[24px] border-2 border-[#efefef]'>
+                          <div className=' flex md:flex-row flex-col items-center justify-between rounded-[8px] py-[16px] px-[24px] border-2 border-[#efefef]'>
                             <div className='flex flex-col'>
-                              <p className='mb-[4px] font-clash capitalize font-semibold lg:text-[24px] lg:leading-[32px] text-[#1d1d1d]'>{videoFile.name}</p>
+                              <p className='mb-[10px] font-clash capitalize font-semibold text-[20px] leading-[28px] md:text-[24px] md:leading-[32px] text-[#1d1d1d]'>{videoFile.name}</p>
                               <div className='flex items-center'>
-                                <p className='uppercase font-aeonik font-normal leading-[18px] text-[#444444]'>{videoFile.type}</p>
+                                <p className='uppercase font-aeonik text-[14px] font-normal leading-[18px] text-[#444444]'>{videoFile.type}</p>
                                 <div className='mx-[8px] h-[18px] border border-[#e4e4e4]'></div>
-                                <p className='font-aeonik font-normal leading-[18px] text-[#444444]'>{(videoFile.size / (1024 * 1024)).toFixed(2)}mb</p>
+                                <p className='font-aeonik font-normal text-[14px] leading-[18px] text-[#444444]'>{(videoFile.size / (1024 * 1024)).toFixed(2)}mb</p>
                               </div>
                             </div>
                             {
                               processStage === ('default' || 'complete') && 
-                              <div onClick={()=>{setVideoFile(null), setStage('initial') ,setProcessStage('default')}} className='self-center cursor-pointer'>
+                              <div onClick={()=>{setVideoFile(null), setStage('initial') ,setProcessStage('default')}} className='md:self-center self-end cursor-pointer'>
                                 <DeleteForeverOutlinedIcon/>
                               </div>
                             }
                             {
                               processStage === 'processing' && 
-                              <div onClick={()=>{setProcessStage('default')}} className='self-center cursor-pointer'>
+                              <div onClick={()=>{setProcessStage('default')}} className='md:self-center self-end cursor-pointer'>
                                 <CloseIcon/>
                               </div>
                             }

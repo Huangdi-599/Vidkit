@@ -13,6 +13,10 @@ export default {
         textHead:"#1d1d1d",
         textBody:"#444444"
       },
+      fontFamily:{
+        aeonik:["Aeonik"],
+        clash:["Clash"]
+      },
       boxShadow:{
         primary: '0px 4px 4px rgba(0, 0, 0, 0.08)'
 

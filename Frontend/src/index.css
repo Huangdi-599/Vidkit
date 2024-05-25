@@ -1,7 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@font-face {
+	font-family: "Aeonik";
+	src: url("/aeonik-fonts/Aeonik-Regular.otf");
+}
+@font-face {
+	font-family: "Clash";
+	src: url("/clash-fonts/ClashDisplay-Regular.otf");
+}
 html {
     scroll-behavior: smooth;
   }
