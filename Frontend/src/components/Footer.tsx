@@ -64,7 +64,7 @@ const Footer:FC<TextProps> = ({handleTextChange})=> {
             <div className='flex flex-row items-center gap-[48px] justify-between py-[16px]'>
                 {
                     nav.map((item, index)=>(
-                        <a onClick={()=>{handleTextChange(item?.link)}} href={item?.nav} className='px-[16px] text-white font-aeonik font-medium text-[20px] leading-[28px]' key={index}>{item.name}</a>
+                        <a onClick={()=>{handleTextChange(item.link as "default" | "compress" | "toAudio" | "trim" | "gif")}} href={item?.nav} className='px-[16px] text-white font-aeonik font-medium text-[20px] leading-[28px]' key={index}>{item.name}</a>
                     ))
                 }
             </div>
