@@ -66,7 +66,7 @@ const Nav:FC<TextProps> = ({handleTextChange}) => {
           <div className="absolute right-0 mt-2 p-[8px] bg-opacity-[80%] rounded-b-[16px] flex flex-col items-center justify-center bg-[#AB1EAA] rounded-lg shadow-lg z-10">
             {
               nav.map((item, index)=>(
-                <a onClick={()=>{handleTextChange(item?.link)}} key={index} href={item.nav} className="px-[16px] py-[12px] whitespace-nowrap text-white text-[16px] font-medium leading-[24px] text-aeonik  hover:bg-gray-200 cursor-pointer">{item.name}</a>
+                <a onClick={()=>{handleTextChange(item.link as "default" | "compress" | "toAudio" | "trim" | "gif")}} key={index} href={item.nav} className="px-[16px] py-[12px] whitespace-nowrap text-white text-[16px] font-medium leading-[24px] text-aeonik  hover:bg-gray-200 cursor-pointer">{item.name}</a>
               ))
             }
             
@@ -82,8 +82,6 @@ const Nav:FC<TextProps> = ({handleTextChange}) => {
           <p className='font-aeonik font-medium text-[20px] leading-[28px] p-[16px]'>How to use</p>
           <p className='font-aeonik font-medium text-[20px] leading-[28px] p-[16px]'>Video tools</p>
         </div>
-        <button className='border-2 border-white rounded-[12px] p-[16px] font-aeonik font-bold text-[20px] leading-[28px]'>
-          Sign up for free</button>
       </nav>
     </div>
   )

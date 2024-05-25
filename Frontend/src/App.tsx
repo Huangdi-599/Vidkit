@@ -46,11 +46,11 @@ function App() {
   const handleTextChange = (key: "default" | "compress" | "toAudio" | "trim" | "gif") => {
     setHeroText(key);
   };
-
+  console.log("key:",heroText)
   return (
     <>
       <Nav handleTextChange={handleTextChange}/>
-      <Hero HeadText={heroHeadContent[heroText]} Text={heroTextContent[heroText]} />
+      <Hero  heroText={heroText} HeadText={heroHeadContent[heroText]} Text={heroTextContent[heroText]} />
       <Body handleTextChange={handleTextChange} />
       <Footer handleTextChange={handleTextChange} />
     </>

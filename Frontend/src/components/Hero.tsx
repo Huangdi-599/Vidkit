@@ -1,13 +1,15 @@
 import smhero from '../assets/smhero.svg'
 import mdhero from '../assets/mdhero.svg'
 import xlhero from '../assets/xlhero.svg'
-import { FC } from 'react';
+import { FC , ReactNode} from 'react';
 import VideoProcessor from './VideoProcessor';
 interface HeroProps {
   HeadText: ReactNode;
   Text: string;
+  heroText: "default" | "compress" | "toAudio" | "trim" | "gif"
 }
-const Hero:FC<HeroProps> =({HeadText, Text}) => {
+const Hero:FC<HeroProps> =({heroText,HeadText,Text}) => {
+  console.log("key2:",heroText)
   const bgImage = window.innerWidth >= 1024 ? xlhero : window.innerWidth >= 768 ? mdhero : smhero;
   return (
     <div
@@ -32,6 +34,22 @@ const Hero:FC<HeroProps> =({HeadText, Text}) => {
           </div>
         </div>
         <div>
+          <div className='bg-primary rounded-t-[8px] p-[12px] md:p-[24px] flex item-center justify-between'>
+            <p className='font-clash font-semibold text-[20px]  md:text-[24px] md:leading-[28px] leading-[24px] text-center'>
+              {heroText === ('default' || 'compress') && 'Video Compress'}
+              {heroText === 'toAudio' && 'Video To Audio'}
+              {heroText === 'trim' && 'Video Trim'}
+              {heroText === 'gif' && 'Video to GIF'}
+            </p>
+            <span className='flex items-center gap-[6px]'>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.6673 7.99998C14.6673 4.31808 11.6825 1.33331 8.00065 1.33331C4.31875 1.33331 1.33398 4.31808 1.33398 7.99998C1.33398 11.6818 4.31875 14.6666 8.00065 14.6666C11.6825 14.6666 14.6673 11.6818 14.6673 7.99998Z" stroke="white" stroke-width="1.5"/>
+                <path d="M8.16081 11.3333V7.99998C8.16081 7.68571 8.16081 7.52858 8.06314 7.43091C7.96554 7.33331 7.80841 7.33331 7.49414 7.33331" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7.99414 5.33331H8.00014" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <p className='font-aeonik font-normal text-[14px] leading-[18px] md:text-[16px] md:leading-[20px]'>Max size 1GB</p>
+            </span>
+          </div>
           <VideoProcessor />
         </div>
       </div>
@@ -52,6 +70,22 @@ const Hero:FC<HeroProps> =({HeadText, Text}) => {
           </div>
         </div>
         <div className='lg:mx-[150px] xl:mx-[212px]'>
+          <div className='bg-primary rounded-t-[8px] p-[12px] md:p-[24px] flex item-center justify-between'>
+            <p className='font-clash font-semibold text-[20px]  md:text-[24px] md:leading-[28px] leading-[24px] text-center'>
+              {heroText === 'default' || 'compress' && 'Video Compress'}
+              {heroText === 'toAudio' && 'Video To Audio'}
+              {heroText === 'trim' && 'Video Trim'}
+              {heroText === 'gif' && 'Video to GIF'}
+            </p>
+            <span className='flex items-center gap-[6px]'>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.6673 7.99998C14.6673 4.31808 11.6825 1.33331 8.00065 1.33331C4.31875 1.33331 1.33398 4.31808 1.33398 7.99998C1.33398 11.6818 4.31875 14.6666 8.00065 14.6666C11.6825 14.6666 14.6673 11.6818 14.6673 7.99998Z" stroke="white" stroke-width="1.5"/>
+                <path d="M8.16081 11.3333V7.99998C8.16081 7.68571 8.16081 7.52858 8.06314 7.43091C7.96554 7.33331 7.80841 7.33331 7.49414 7.33331" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7.99414 5.33331H8.00014" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <p className='font-aeonik font-normal text-[14px] leading-[18px] md:text-[16px] md:leading-[20px]'>Max size 1GB</p>
+            </span>
+          </div>
           <VideoProcessor />
         </div>
       </div>

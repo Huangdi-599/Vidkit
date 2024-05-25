@@ -35,7 +35,7 @@ const Features = [
     title:'Video to Audio',
     descr:'With Vidkit you can convert your lovely videos into other formats.',
     text:'Convert video',
-    link:'toAudio',
+    link:"toAudio",
     isAav:true
 
   },
@@ -43,14 +43,14 @@ const Features = [
     title:'Video Trim',
     descr:'With Vidkit you can compress your lovely videos for any platform usage.',
     text:'Trim Video',
-    link:'trim',
+    link:"trim",
     isAav:false
   },
   {
     title:'Video to Gif',
     descr:'With Vidkit you can compress your lovely videos for any platform usage.',
     text:'Convert to Gif',
-    link:'gif',
+    link:"gif",
     isAav:false
   },
 ]
@@ -59,8 +59,8 @@ interface TextProps {
 }
 const Body:FC<TextProps> = ({handleTextChange}) => {
   return (
-    <div  id='how' >
-      <body className='px-[16px] md:px-[48px] flex flex-col lg:hidden mt-[150px]'>
+    <body  id='how' >
+      <div className='px-[16px] md:px-[48px] flex flex-col lg:hidden mt-[150px]'>
         <h1 className="mb-[8px] text-textHead font-clash font-semibold md:text-[64px] md:leading-[72px] text-[36px] leading-[44px]">How to use</h1>
         <p className="mb-[40px] text-textBody font-aeonik font-normal md:text-[24px] md:leading-[32px] text-[20px] leading-[28px]">4 quick and easy steps to use Vidkit video tools</p>
         <div className="flex flex-col gap-[24px]">
@@ -85,7 +85,7 @@ const Body:FC<TextProps> = ({handleTextChange}) => {
                     <img className='h-full w-full' src={image} alt="viskit"  />
                   </div>
                   { item.isAav ?(
-                    <a onClick={()=>{handleTextChange(item.link)}} className="text-primary cursor-pointer font-aeonik font-bold md:text-[24px] md:leading-[32px] text-[16px] leading-[24px]" >
+                    <a onClick={()=>{handleTextChange(item.link as "default" | "compress" | "toAudio" | "trim" | "gif")}} href='#hero' className="text-primary cursor-pointer font-aeonik font-bold md:text-[24px] md:leading-[32px] text-[16px] leading-[24px]" >
                       {`${item.text} >>`}
                     </a>
                     ):(
@@ -100,8 +100,8 @@ const Body:FC<TextProps> = ({handleTextChange}) => {
           </div>
         </div>
         <Review />
-      </body>
-      <body className='hidden px-[128px] lg:flex flex-col mt-[200px] '>
+      </div>
+      <div className='hidden px-[128px] lg:flex flex-col mt-[200px] '>
         <h1 className='mb-[8px] text-textHead font-clash font-semibold text-[64px] leading-[72px]'>How to use</h1>
         <p className='mb-[64px] text-textBody font-normal text-[34px] leading-[32px]'>4 quick and easy steps to use Vidkit video tools</p>
         <div  className='flex flex-wrap flex-row gap-[24px] w-full'>
@@ -128,7 +128,8 @@ const Body:FC<TextProps> = ({handleTextChange}) => {
                       <img className='h-full w-full' src={image} alt="viskit"  />
                     </div>
                     { item.isAav ?(
-                    <a onClick={()=>{handleTextChange(item.link)}} className="text-primary cursor-pointer font-aeonik font-bold text-[24px] leading-[32px]" >
+                    <a onClick={() => handleTextChange(item.link as "default" | "compress" | "toAudio" | "trim" | "gif")}  href='#hero'
+                    className="text-primary cursor-pointer font-aeonik font-bold text-[24px] leading-[32px]" >
                       {`${item.text} >>`}
                     </a>
                     ):(
@@ -144,8 +145,8 @@ const Body:FC<TextProps> = ({handleTextChange}) => {
           </div>
         </div>
         <Review />
-      </body>
-    </div>
+      </div>
+    </body>
   )
 }
 

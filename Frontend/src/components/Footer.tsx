@@ -12,32 +12,32 @@ const nav:NavItem[] = [
     {
         name:"Home", 
         nav:'#home',
-        link:'compress'
+        link:"compress"
     },
     {
         name:"How to use", 
         nav:'#how',
-        link:'compress'
+        link:"compress"
     },
     {
         name:"Video compress", 
         nav:'#hero',
-        link:'compress',
+        link:"compress",
     },
     {
         name:"Video to Audio", 
         nav:'#hero',
-        link:'toAudio'
+        link:"toAudio"
     },
     {
         name:"Contact", 
         nav:'mailto:adebayoh9@gmail.com',
-        link:'compress'
+        link:"compress"
     },
 
 ]
 interface TextProps {
-    handleTextChange: (key: "default" | "compress" | "toAudio" | "trim" | "gif") => void;
+  handleTextChange: (key: "default" | "compress" | "toAudio" | "trim" | "gif") => void;
 }
 const Footer:FC<TextProps> = ({handleTextChange})=> {
     const bgImage = window.innerWidth >= 1024 ? xlfooter : window.innerWidth >= 768 ? mdfooter : smfooter;
