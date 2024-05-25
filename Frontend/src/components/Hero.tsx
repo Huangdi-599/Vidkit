@@ -36,7 +36,8 @@ const Hero:FC<HeroProps> =({heroText,HeadText,Text}) => {
         <div>
           <div className='bg-primary rounded-t-[8px] p-[12px] md:p-[24px] flex item-center justify-between'>
             <p className='font-clash font-semibold text-[20px]  md:text-[24px] md:leading-[28px] leading-[24px] text-center'>
-              {heroText === ('default' || 'compress') && 'Video Compress'}
+              {heroText === 'compress' && 'Video Compress'}
+              {heroText === 'default' && 'Video Compress'}
               {heroText === 'toAudio' && 'Video To Audio'}
               {heroText === 'trim' && 'Video Trim'}
               {heroText === 'gif' && 'Video to GIF'}
@@ -72,7 +73,8 @@ const Hero:FC<HeroProps> =({heroText,HeadText,Text}) => {
         <div className='lg:mx-[150px] xl:mx-[212px]'>
           <div className='bg-primary rounded-t-[8px] p-[12px] md:p-[24px] flex item-center justify-between'>
             <p className='font-clash font-semibold text-[20px]  md:text-[24px] md:leading-[28px] leading-[24px] text-center'>
-              {heroText === 'default' || 'compress' && 'Video Compress'}
+              {heroText === 'compress' && 'Video Compress'}
+              {heroText === 'default' && 'Video Compress'}
               {heroText === 'toAudio' && 'Video To Audio'}
               {heroText === 'trim' && 'Video Trim'}
               {heroText === 'gif' && 'Video to GIF'}
