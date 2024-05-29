@@ -7,8 +7,9 @@ interface HeroProps {
   HeadText: ReactNode;
   Text: string;
   heroText: "default" | "compress" | "toAudio" | "trim" | "gif"
+  darkmode:boolean
 }
-const Hero:FC<HeroProps> =({heroText,HeadText,Text}) => {
+const Hero:FC<HeroProps> =({heroText,HeadText,Text,darkmode}) => {
   console.log("key2:",heroText)
   const bgImage = window.innerWidth >= 1024 ? xlhero : window.innerWidth >= 768 ? mdhero : smhero;
   return (
@@ -51,7 +52,7 @@ const Hero:FC<HeroProps> =({heroText,HeadText,Text}) => {
               <p className='font-aeonik font-normal text-[14px] leading-[18px] md:text-[16px] md:leading-[20px]'>Max size 1GB</p>
             </span>
           </div>
-          <VideoProcessor />
+          <VideoProcessor darkmode={darkmode} type={heroText} />
         </div>
       </div>
       <div className='text-white hidden lg:flex flex-col pt-[96px]'>
@@ -88,7 +89,7 @@ const Hero:FC<HeroProps> =({heroText,HeadText,Text}) => {
               <p className='font-aeonik font-normal text-[14px] leading-[18px] md:text-[16px] md:leading-[20px]'>Max size 1GB</p>
             </span>
           </div>
-          <VideoProcessor />
+          <VideoProcessor darkmode={darkmode} type={heroText} />
         </div>
       </div>
       

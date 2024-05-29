@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class",
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -18,7 +19,7 @@ export default {
         clash:["Clash"]
       },
       boxShadow:{
-        primary: '0px 4px 4px rgba(0, 0, 0, 0.08)'
+        my: '0px 4px 4px rgba(0, 0, 0, 0.08)'
 
       }
     },

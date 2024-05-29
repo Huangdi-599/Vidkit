@@ -12,8 +12,8 @@ function Review() {
   return (
     <>
         <div className='mb-[120px] flex flex-col lg:hidden'>
-            <h1 className="mb-[8px] text-textHead font-clash font-semibold md:text-[64px] md:leading-[72px] text-[36px] leading-[44px]">What users say</h1>
-            <p className="mb-[64px] text-textBody font-aeonik font-normal md:text-[24px] md:leading-[32px] text-[20px] leading-[28px]">Here are feedback from our lovely users from all over the world.</p>
+            <h1 className="mb-[8px] text-textHead dark:text-white font-clash font-semibold md:text-[64px] md:leading-[72px] text-[36px] leading-[44px]">What users say</h1>
+            <p className="mb-[64px] text-textBody dark:text-white font-aeonik font-normal md:text-[24px] md:leading-[32px] text-[20px] leading-[28px]">Here are feedback from our lovely users from all over the world.</p>
             <div className='flex flex-col gap-[24px]'>
                 <div className='rounded-[16px] hover:scale-105 transition-transform h-full w-full'>
                     <img className='h-full w-full' src={review1} alt="" />
@@ -34,8 +34,8 @@ function Review() {
             </div>
         </div>
         <div className='mb-[120px] lg:flex flex-col hidden'>
-          <h1 className='mb-[8px] text-textHead font-clash font-semibold text-[64px] leading-[72px]'>What users say</h1>
-          <p className='mb-[64px] text-textBody font-normal text-[34px] leading-[32px]'>Here are feedback from our lovely users from all over the world.</p>
+          <h1 className='mb-[8px] text-textHead dark:text-white font-clash font-semibold text-[64px] leading-[72px]'>What users say</h1>
+          <p className='mb-[64px] text-textBody dark:text-white font-normal text-[34px] leading-[32px]'>Here are feedback from our lovely users from all over the world.</p>
           <div className='flex items-center gap-[24px] mb-[24px]'>
             <div className='rounded-[16px] hover:scale-105 transition-transform h-full w-[70%]'>
               <img className='h-full w-full' src={reviewlg1} alt="" />

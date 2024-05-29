@@ -3,7 +3,7 @@ import Nav from './components/Nav';
 import Hero from './components/Hero';
 import Body from './components/Body';
 import Footer from './components/Footer';
-
+import { ToastContainer} from 'react-toastify';
 import { useState, ReactNode } from 'react';
 
 // Define types for HeroHead and HeroText
@@ -42,18 +42,23 @@ const heroTextContent: HeroText = {
 
 function App() {
   const [heroText, setHeroText] = useState<"default" | "compress" | "toAudio" | "trim" | "gif">("default");
-
   const handleTextChange = (key: "default" | "compress" | "toAudio" | "trim" | "gif") => {
     setHeroText(key);
   };
-  console.log("key:",heroText)
+  const [darkMode, setDarkMode] = useState(true);
+  const toggleDarkMode = () => {
+    setDarkMode((prevDarkMode) => !prevDarkMode);
+  };
+
+  // console.log("key:",heroText)
   return (
-    <>
-      <Nav handleTextChange={handleTextChange}/>
-      <Hero  heroText={heroText} HeadText={heroHeadContent[heroText]} Text={heroTextContent[heroText]} />
+    <div className={darkMode ? "dark bg-[#0D0D0D]" : ''}>
+      <Nav darkmode={darkMode} toggledarkmode = {toggleDarkMode} handleTextChange={handleTextChange}/>
+      <Hero darkmode={darkMode} heroText={heroText} HeadText={heroHeadContent[heroText]} Text={heroTextContent[heroText]} />
       <Body handleTextChange={handleTextChange} />
       <Footer handleTextChange={handleTextChange} />
-    </>
+      <ToastContainer />
+    </div>
   );
 }
 

@@ -59,28 +59,28 @@ interface TextProps {
 }
 const Body:FC<TextProps> = ({handleTextChange}) => {
   return (
-    <body  id='how' >
-      <div className='px-[16px] md:px-[48px] flex flex-col lg:hidden mt-[150px]'>
-        <h1 className="mb-[8px] text-textHead font-clash font-semibold md:text-[64px] md:leading-[72px] text-[36px] leading-[44px]">How to use</h1>
-        <p className="mb-[40px] text-textBody font-aeonik font-normal md:text-[24px] md:leading-[32px] text-[20px] leading-[28px]">4 quick and easy steps to use Vidkit video tools</p>
+    <body id='how' >
+      <div className='dark:bg-[#0D0D0D] dark:text-white px-[16px] md:px-[48px] flex flex-col lg:hidden mt-[150px]'>
+        <h1 className="mb-[8px] text-textHead dark:text-white font-clash font-semibold md:text-[64px] md:leading-[72px] text-[36px] leading-[44px]">How to use</h1>
+        <p className="mb-[40px] text-textBody dark:text-white font-aeonik font-normal md:text-[24px] md:leading-[32px] text-[20px] leading-[28px]">4 quick and easy steps to use Vidkit video tools</p>
         <div className="flex flex-col gap-[24px]">
           {instructions.map((item, index)=>(
-          <div key={index} className={`${item.id === 2 && 'md:ml-[188px]'} ${item.id === 3 && 'md:mr-[188px]'} bg-BgColor flex flex-col p-[24px] md:p-[48px] rounded-[16px]`}>
-            <div className={`${(item.id === 2 || item.id === 3) ? 'bg-secondary' : 'bg-primary'} mb-[24px] font-clash text-white text-[40px] leading-[48px] md:text-[64px] md:leading-[70px] py-[8px] md:px-[32px] px-[24px] rounded-[8px] w-fit`}>{item.id}</div>
-            <h1 className="mb-[8px] text-textHead font-clash font-semibold md:text-[32px] md:leading-[40px] text-[28px] leading-[36px]">{item.title}</h1>
-            <p className="text-textBody font-aeonik font-normal text-[16px] leading-[24px]">{item.desc}</p>
+          <div key={index} className={`${item.id === 2 && 'md:ml-[188px] dark:bg-[#444444]'} ${item.id === 3 && 'dark:bg-[#444444] md:mr-[188px]'} bg-BgColor dark:bg-[#1d1d1d] flex flex-col p-[24px] md:p-[48px] rounded-[16px]`}>
+            <div className={`${(item.id === 2 || item.id === 3) ? 'bg-secondary ' : 'bg-primary'} mb-[24px] font-clash  text-white text-[40px] leading-[48px] md:text-[64px] md:leading-[70px] py-[8px] md:px-[32px] px-[24px] rounded-[8px] w-fit`}>{item.id}</div>
+            <h1 className="mb-[8px] text-textHead dark:text-white font-clash font-semibold md:text-[32px] md:leading-[40px] text-[28px] leading-[36px]">{item.title}</h1>
+            <p className="text-textBody dark:text-white font-aeonik font-normal text-[16px] leading-[24px]">{item.desc}</p>
           </div>
           ))}
         </div>
-        <div className="my-[100px] md:my-[120px] py-[100px] mx-[-16px] md:mx-[-48px] px-[16px] md:px-[48px] bg-BgColor">
-          <h1 className="mb-[8px] text-textHead font-clash font-semibold md:text-[64px] md:leading-[88px] text-[36px] leading-[44px]">All in one toolkit</h1>
-          <p className="mb-[64px] text-textBody font-aeonik font-normal text-[20px] md:text-[28px] md:leading-[36px] leading-[28px]">With Vidkit, you can get a full comprehensive suite of tools help edit, manage and have fun with your videos.</p>
+        <div className="my-[100px] md:my-[120px] py-[100px] mx-[-16px] md:mx-[-48px] px-[16px] md:px-[48px] bg-BgColor dark:bg-[#323232]">
+          <h1 className="mb-[8px] text-textHead dark:text-white font-clash font-semibold md:text-[64px] md:leading-[88px] text-[36px] leading-[44px]">All in one toolkit</h1>
+          <p className="mb-[64px] text-textBody dark:text-white font-aeonik font-normal text-[20px] md:text-[28px] md:leading-[36px] leading-[28px]">With Vidkit, you can get a full comprehensive suite of tools help edit, manage and have fun with your videos.</p>
           <div className="flex flex-col gap-[40px]">
             {
               Features.map((item, index)=>(
-                <div key={index} className="bg-white shadow-primary py-[32px] px-[24px] md:px-[48px] md:py-[48px] rounded-[8px] md:rounded-[16px] flex flex-col ">
-                  <h1 className="mb-[8px] text-textHead font-clash font-semibold md:text-[40px] md:leading-[48px] text-[28px] leading-[36px]">{item.title}</h1>
-                  <p className="mb-[40px] md:mb-[24px] text-textBody font-aeonik font-normal md:text-[20px] md:leading-[28px] text-[16px] leading-[24px]">{item.descr}</p>
+                <div key={index} className="bg-white dark:bg-[#1d1d1d] shadow-my py-[32px] px-[24px] md:px-[48px] md:py-[48px] rounded-[8px] md:rounded-[16px] flex flex-col ">
+                  <h1 className="mb-[8px] text-textHead dark:text-white font-clash font-semibold md:text-[40px] md:leading-[48px] text-[28px] leading-[36px]">{item.title}</h1>
+                  <p className="mb-[40px] md:mb-[24px] text-textBody dark:text-white font-aeonik font-normal md:text-[20px] md:leading-[28px] text-[16px] leading-[24px]">{item.descr}</p>
                   <div className='mb-[24px] md:mb-[-24px] h-[64px] w-[89.35px] md:w-[139.6px] md:h-[100px] md:self-end'>
                     <img className='h-full w-full' src={image} alt="viskit"  />
                   </div>
@@ -101,31 +101,31 @@ const Body:FC<TextProps> = ({handleTextChange}) => {
         </div>
         <Review />
       </div>
-      <div className='hidden px-[128px] lg:flex flex-col mt-[200px] '>
-        <h1 className='mb-[8px] text-textHead font-clash font-semibold text-[64px] leading-[72px]'>How to use</h1>
-        <p className='mb-[64px] text-textBody font-normal text-[34px] leading-[32px]'>4 quick and easy steps to use Vidkit video tools</p>
+      <div className='dark:bg-[#0D0D0D] hidden px-[128px] lg:flex flex-col mt-[200px] '>
+        <h1 className='mb-[8px] text- dark:text-white font-clash font-semibold text-[64px] leading-[72px]'>How to use</h1>
+        <p className='mb-[64px] text- dark:text-white font-normal text-[34px] leading-[32px]'>4 quick and easy steps to use Vidkit video tools</p>
         <div  className='flex flex-wrap flex-row gap-[24px] w-full'>
           {instructions.map((item, index)=>(
-            <div key={index} className={`${(item.id === 2 || item.id === 3) ? 'w-[43%] bg-[#fceefc] ' : 'w-[57%] flex-1 bg-BgColor'} flex flex-col  p-[48px] rounded-[16px]`}>
+            <div key={index} className={`${(item.id === 2 || item.id === 3) ? 'w-[43%] bg-[#fceefc] dark:bg-[#444444] ' : 'w-[57%] flex-1 bg-BgColor dark:bg-[#1d1d1d]'} flex flex-col  p-[48px] rounded-[16px]`}>
               <div className={`${(item.id === 2 || item.id === 3) ? 'bg-secondary' : 'bg-primary'} mb-[24px] font-clash text-white text-[64px] leading-[70px] py-[8px] px-[32px] rounded-[8px] w-fit`}>{item.id}</div>
-              <h1 className="mb-[8px] text-textHead font-clash font-semibold md:text-[32px] leading-[40px]">{item.title}</h1>
-              <p className="text-textBody font-aeonik font-normal text-[16px] leading-[24px]">{item.desc}</p>
+              <h1 className="mb-[8px] text-textHead dark:text-white font-clash font-semibold md:text-[32px] leading-[40px]">{item.title}</h1>
+              <p className="text-textBody dark:text-white font-aeonik font-normal text-[16px] leading-[24px]">{item.desc}</p>
             </div>
             ))}
 
         </div>
-        <div className='py-[100px] mx-[-128px] my-[120px] bg-BgColor px-[128px]'>
-          <h1 className='mb-[8px] text-textHead font-clash font-semibold text-[64px] leading-[72px]'>All in one toolkit</h1>
-          <p className='mb-[64px] text-textBody font-normal text-[34px] leading-[32px]'>With Vidkit, you can get a full comprehensive suite of tools help edit, manage and have fun with your videos.</p>
+        <div className='py-[100px] mx-[-128px] my-[120px] bg-BgColor dark:bg-[#323232] px-[128px]'>
+          <h1 className='mb-[8px] text-textHead dark:text-white font-clash font-semibold text-[64px] leading-[72px]'>All in one toolkit</h1>
+          <p className='mb-[64px] text-textBody dark:text-white font-normal text-[34px] leading-[32px]'>With Vidkit, you can get a full comprehensive suite of tools help edit, manage and have fun with your videos.</p>
           <div className='grid grid-cols-2 gap-[24px]'>
             {
               Features.map((item, index)=>(
-                <div key={index} className="bg-white shadow-primary p-[48px] rounded-[16px] flex flex-col ">
-                  <h1 className="mb-[8px] text-textHead font-clash font-semibold text-[40px] leading-[48px]">{item.title}</h1>
-                  <p className="mb-[292px] text-textBody font-aeonik font-normal text-[20px] leading-[28px]">{item.descr}</p>
+                <div key={index} className="bg-white dark:bg-[#1d1d1d] shadow-my p-[48px] rounded-[16px] flex flex-col ">
+                  <h1 className="mb-[8px] text-textHead  dark:text-white font-clash font-semibold text-[40px] leading-[48px]">{item.title}</h1>
+                  <p className="mb-[292px] text-textBody dark:text-white  font-aeonik font-normal text-[20px] leading-[28px]">{item.descr}</p>
                   <div className='flex flex-row-reverse items-end justify-between'>
                     <div className='h-[100px] w-[139.6px] hover:scale-125 transition-transform'>
-                      <img className='h-full w-full' src={image} alt="viskit"  />
+                      <img className='h-full w-full' src={image} alt="vidkit"  />
                     </div>
                     { item.isAav ?(
                     <a onClick={() => handleTextChange(item.link as "default" | "compress" | "toAudio" | "trim" | "gif")}  href='#hero'
